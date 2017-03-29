@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from './../project';
+import { ProjectService } from './../project.service';
+// declare var firebase: any;
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  projects: Project[];
 
-  constructor() { }
+  constructor(
+    private projectService: ProjectService) { }
 
-  ngOnInit() {
+    getProjects(): void {
+      this.projectService.getProjects().then(projects => this.projects = projects);
+    }
+
+
+  ngOnInit(): void {
+    // this.fbGetData();
+    this.getProjects();
   }
+  // projects = [];
+  //
+  // fbGetData() {
+  //   firebase.database().ref('/projects/').on('child_added', (snapshot) => {
+  //     this.projects.push(snapshot.val())
+  //   })
+  // }
+  // fbSaveProject(){
+  //   firebase.database().ref("/projects/").push{"put properties of object here"}
+  // }
 
 }

@@ -6,6 +6,7 @@ import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { ProjectService } from './project.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HomeComponent } from './home/home.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
