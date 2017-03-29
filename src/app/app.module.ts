@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectService } from './project.service';
 import { NewProjectComponent } from './new-project/new-project.component';
+import { EditProjectsComponent } from './edit-projects/edit-projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    EditProjectsComponent
   ],
   imports: [
     BrowserModule,

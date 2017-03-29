@@ -1,0 +1,10 @@
+<div>
+  <div *ngIf="childSelectedProject">
+    <h3>{{childSelectedProject.header}}</h3>
+    <hr>
+    <h3>Edit Project</h3>
+    <label>Enter Project Description:</label>
+    <input [(ngModel)]="childSelectedProject.description">
+    <button (click)="doneButtonClicked()">Done</button>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { ProjectService } from './../project.service';
 })
 export class HomeComponent implements OnInit {
   projects: Project[];
+  selectedProject = null;
 
   constructor(
     private projectService: ProjectService) { }
@@ -26,6 +27,15 @@ export class HomeComponent implements OnInit {
 
   addProject(newProject: Project){
     this.projects.push(newProject);
+    console.log(newProject.id)
+  }
+
+  editProject(clickedProject) {
+    this.selectedProject = clickedProject;
+  }
+
+  finishedEditing() {
+    this.selectedProject = null;
   }
   // projects = [];
   //
