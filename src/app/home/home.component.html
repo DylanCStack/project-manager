@@ -1,6 +1,6 @@
 <h2>Home Route</h2>
 <app-new-project (newProjectSender)="addProject($event)"></app-new-project>
-<div *ngFor="let project of projects">
+<div class="well" *ngFor="let project of projects" (click)="goToDetailPage(project)">
   <h3>{{project.header}}</h3>
   <p>{{project.description}}</p>
   <button (click)="editProject(project)">Edit Project</button>

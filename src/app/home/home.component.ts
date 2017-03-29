@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Project } from './../project';
 import { ProjectService } from './../project.service';
 // declare var firebase: any;
@@ -12,7 +14,7 @@ export class HomeComponent implements OnInit {
   projects: Project[];
   selectedProject = null;
 
-  constructor(
+  constructor(private router: Router,
     private projectService: ProjectService) { }
 
     getProjects(): void {
@@ -36,6 +38,10 @@ export class HomeComponent implements OnInit {
 
   finishedEditing() {
     this.selectedProject = null;
+  }
+
+  goToDetailPage(clickedProject: Project) {
+    this.router.navigate(['project', clickedProject.id]);
   }
   // projects = [];
   //
