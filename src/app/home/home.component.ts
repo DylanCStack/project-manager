@@ -23,6 +23,10 @@ export class HomeComponent implements OnInit {
     // this.fbGetData();
     this.getProjects();
   }
+
+  addProject(newProject: Project){
+    this.projects.push(newProject);
+  }
   // projects = [];
   //
   // fbGetData() {

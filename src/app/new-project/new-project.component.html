@@ -1,1 +1,13 @@
-<h1>NEW PROJECTS HERE</h1>
+<div>
+  <form>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" #newHeader placeholder="title">
+    </div>
+    <div class="form-group">
+      <label>Description/Pitch</label>
+      <input type="text" #newDescription  placeholder="description">
+    </div>
+    <button (click)="addProject(newHeader.value, newDescription.value)">Save</button>
+  </form>
+</div>
