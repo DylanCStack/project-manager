@@ -7,11 +7,13 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectService } from './project.service';
+import { NewProjectComponent } from './new-project/new-project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NewProjectComponent
   ],
   imports: [
     BrowserModule,
