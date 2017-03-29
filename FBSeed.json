@@ -1,0 +1,12 @@
+{ "projects": [
+  {
+    "header": "Jason's Project",
+    "description": "A super good project full of hard, impressive things",
+    "signup": {"interested": [], "committed": []}
+  },
+  {
+    "header": "Dylan's Project",
+    "description": "A super hard project full of good, impressing things",
+    "signup": {"interested": [], "committed": []}
+  }]
+}
