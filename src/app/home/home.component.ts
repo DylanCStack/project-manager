@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 
 import { Project } from './../project';
 import { ProjectService } from './../project.service';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
 // declare var firebase: any;
 
 @Component({
@@ -11,14 +13,15 @@ import { ProjectService } from './../project.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  projects: Project[];
+  projects: FirebaseListObservable <any[]>;
   selectedProject = null;
 
   constructor(private router: Router,
     private projectService: ProjectService) { }
 
     getProjects(): void {
-      this.projectService.getProjects().then(projects => this.projects = projects);
+      this.projects = this.projectService.getProjects();
+
     }
 
 
@@ -38,6 +41,7 @@ export class HomeComponent implements OnInit {
 
   finishedEditing() {
     this.selectedProject = null;
+    //save edits to firebase
   }
 
   goToDetailPage(clickedProject: Project) {

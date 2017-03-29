@@ -13,7 +13,7 @@ export class NewProjectComponent implements OnInit {
   ngOnInit() {
   }
   addProject(header:string, description:string) {
-    var newProject: Project = {id: Math.floor(Math.random() * 100), header: header, description:description};
+    var newProject: Project = {header: header, description:description};
     this.newProjectSender.emit(newProject);
   }
 }
