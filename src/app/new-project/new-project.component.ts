@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Project } from './../project';
+// import { Project } from './../project';
 
 @Component({
   selector: 'app-new-project',
@@ -13,7 +13,7 @@ export class NewProjectComponent implements OnInit {
   ngOnInit() {
   }
   addProject(header:string, description:string) {
-    var newProject: Project = {header: header, description:description, id: null, $key: null};
+    var newProject/*: Project*/ = {header: header, description:description};
     this.newProjectSender.emit(newProject);
   }
 }

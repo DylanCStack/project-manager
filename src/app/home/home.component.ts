@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Project } from './../project';
+// import { Project } from './../project';
 import { ProjectService } from './../project.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
@@ -33,12 +33,12 @@ export class HomeComponent implements OnInit {
     this.getProjects();
   }
 
-  addProject(newProject: Project){
+  addProject(newProject/*: Project*/){
     this.projects.push(newProject);
     // console.log(newProject.$key)
   }
 
-    goToDetailPage(clickedProject: Project) {
+    goToDetailPage(clickedProject/*: Project*/) {
       console.log(clickedProject);
       this.router.navigate(['project', clickedProject.$key]);
     }

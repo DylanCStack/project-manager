@@ -33,10 +33,6 @@ export class ProjectDetailComponent implements OnInit {
       this.projectId = urlParameters['id'];
     });
     this.projectToDisplay = this.projectService.getProjectById(this.projectId).subscribe(result=>this.projectToDisplay = result);
-    console.log(this.projectToDisplay);
-    setTimeout(function(){
-      console.log(this.projectToDisplay);
-    },2000)
 
   }
 
