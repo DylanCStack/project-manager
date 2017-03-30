@@ -10,7 +10,7 @@ import { ProjectService } from '../project.service';
   providers: [ProjectService]
 })
 export class EditProjectsComponent implements OnInit {
-  @Input() selectedProject: Project;
+  @Input() editingProject: Project;
   @Output() doneButtonClickedSender = new EventEmitter();
 
 
@@ -26,6 +26,7 @@ export class EditProjectsComponent implements OnInit {
 
   updateProject(selectedProject){
     this.projectService.updateProject(selectedProject);
+    console.log(selectedProject);
     this.doneButtonClickedSender.emit();
   }
 

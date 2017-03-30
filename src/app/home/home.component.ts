@@ -15,7 +15,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class HomeComponent implements OnInit {
   projects: FirebaseListObservable <any[]>;
-  selectedProject = null;
+  // selectedProject = null;
 
 
   constructor(
@@ -38,23 +38,14 @@ export class HomeComponent implements OnInit {
     // console.log(newProject.$key)
   }
 
-  // editProject(clickedProject) {
-  //   this.selectedProject = clickedProject;
-  // }
-
-  finishedEditing() {
-    this.selectedProject = null;
-  }
-  deleteProject(project){
-    if(confirm("Are you sure you want to delete this project?")){
-      this.projectService.deleteProject(project);
+    goToDetailPage(clickedProject: Project) {
+      console.log(clickedProject);
+      this.router.navigate(['project', clickedProject.$key]);
     }
-  }
 
-  goToDetailPage(clickedProject: Project) {
-    console.log(clickedProject);
-    this.router.navigate(['project', clickedProject.$key]);
-  }
+
+
+
 
 
 }

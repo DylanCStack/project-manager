@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { Project } from './../project';
 import { ProjectService } from './../project.service';
 import { FirebaseObjectObservable } from 'angularfire2';
+import { Router } from '@angular/router';
+
 
 
 
@@ -16,8 +18,11 @@ import { FirebaseObjectObservable } from 'angularfire2';
 export class ProjectDetailComponent implements OnInit {
   projectId: string;
   projectToDisplay;
+  editingProject: Project = null;
+
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private location: Location,
     private projectService: ProjectService
@@ -27,8 +32,27 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
-    this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+    this.projectToDisplay = this.projectService.getProjectById(this.projectId).subscribe(result=>this.projectToDisplay = result);
     console.log(this.projectToDisplay);
+    setTimeout(function(){
+      console.log(this.projectToDisplay);
+    },2000)
+
+  }
+
+  editProject() {
+    this.editingProject = this.projectToDisplay;
+    console.log(this.projectToDisplay);
+  }
+
+  finishedEditing() {
+    this.editingProject = null;
+  }
+
+  deleteProject(project){
+    if(confirm("Are you sure you want to delete this project?")){
+      this.projectService.deleteProject(project);
+    }
   }
 
 }

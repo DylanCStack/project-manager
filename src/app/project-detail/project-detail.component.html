@@ -1,6 +1,7 @@
-<div class="well">
-  <h3>{{(projectToDisplay | async)?.header}}</h3>
-  <p>{{(projectToDisplay | async)?.description}}</p>
-  <button (click)="editProject(projectToDisplay)">Edit Project</button>
-  <button (click)="deleteProject(projectToDisplay)">Delete</button>
+<div class="well" >
+  <h3>{{(projectToDisplay)?.header}}</h3>
+  <p>{{(projectToDisplay)?.description}}</p>
+  <button (click)="editProject()">Edit Project</button>
+  <button (click)="deleteProject()">Delete</button>
+  <app-edit-projects [editingProject]="editingProject" (doneButtonClickedSender)="finishedEditing()"></app-edit-projects>
 </div>
