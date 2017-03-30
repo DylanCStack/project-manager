@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { FilterPipe } from './../filter.pipe';
 // import { Project } from './../project';
 import { ProjectService } from './../project.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -16,6 +16,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class HomeComponent implements OnInit {
   projects: FirebaseListObservable <any[]>;
   // selectedProject = null;
+  term;
 
 
   constructor(
