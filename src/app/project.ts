@@ -1,5 +1,5 @@
 export class Project {
-  //id: number,
-  header: string;
-  description: string;
+  constructor(public header:string, public description:string, public id:number){
+  }
+
 }

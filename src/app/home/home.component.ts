@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
 
   addProject(newProject: Project){
     this.projects.push(newProject);
-    // console.log(newProject.id)
+    // console.log(newProject.$key)
   }
 
   editProject(clickedProject) {
