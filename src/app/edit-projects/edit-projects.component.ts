@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+
 import { Project } from './../project';
 import { ProjectService } from '../project.service';
 
@@ -11,6 +12,8 @@ import { ProjectService } from '../project.service';
 export class EditProjectsComponent implements OnInit {
   @Input() selectedProject: Project;
   @Output() doneButtonClickedSender = new EventEmitter();
+
+
 
   // doneButtonClicked() {
   //   this.doneButtonClickedSender.emit();

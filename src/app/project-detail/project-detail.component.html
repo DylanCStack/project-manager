@@ -1,3 +1,6 @@
-<p>
-  project-detail works!
-</p>
+<div class="well">
+  <h3>{{projectToDisplay.header}}</h3>
+  <p>{{projectToDisplay.description}}</p>
+  <button (click)="editProject(projectToDisplay)">Edit Project</button>
+  <button (click)="deleteProject(projectToDisplay)">Delete</button>
+</div>

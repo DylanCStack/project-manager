@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from './project';
-import { PROJECTS } from './mock-projects';
+// import { PROJECTS } from './mock-projects';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 

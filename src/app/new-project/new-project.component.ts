@@ -13,7 +13,7 @@ export class NewProjectComponent implements OnInit {
   ngOnInit() {
   }
   addProject(header:string, description:string) {
-    var newProject: Project = {header: header, description:description};
+    var newProject: Project = {header: header, description:description, id: null};
     this.newProjectSender.emit(newProject);
   }
 }

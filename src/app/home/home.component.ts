@@ -10,14 +10,16 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [ProjectService]
 })
 export class HomeComponent implements OnInit {
   projects: FirebaseListObservable <any[]>;
   selectedProject = null;
 
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private projectService: ProjectService) { }
 
     getProjects(): void {
@@ -36,9 +38,9 @@ export class HomeComponent implements OnInit {
     // console.log(newProject.$key)
   }
 
-  editProject(clickedProject) {
-    this.selectedProject = clickedProject;
-  }
+  // editProject(clickedProject) {
+  //   this.selectedProject = clickedProject;
+  // }
 
   finishedEditing() {
     this.selectedProject = null;
@@ -50,17 +52,9 @@ export class HomeComponent implements OnInit {
   }
 
   goToDetailPage(clickedProject: Project) {
-    // this.router.navigate(['project', clickedProject.id]);
+    console.log(clickedProject);
+    this.router.navigate(['project', clickedProject.$key]);
   }
-  // projects = [];
-  //
-  // fbGetData() {
-  //   firebase.database().ref('/projects/').on('child_added', (snapshot) => {
-  //     this.projects.push(snapshot.val())
-  //   })
-  // }
-  // fbSaveProject(){
-  //   firebase.database().ref("/projects/").push{"put properties of object here"}
-  // }
+
 
 }
