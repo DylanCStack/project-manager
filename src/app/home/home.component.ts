@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   projects: FirebaseListObservable <any[]>;
   selectedProject = null;
 
+
   constructor(private router: Router,
     private projectService: ProjectService) { }
 
@@ -32,7 +33,7 @@ export class HomeComponent implements OnInit {
 
   addProject(newProject: Project){
     this.projects.push(newProject);
-    console.log(newProject.id)
+    // console.log(newProject.id)
   }
 
   editProject(clickedProject) {
@@ -41,11 +42,10 @@ export class HomeComponent implements OnInit {
 
   finishedEditing() {
     this.selectedProject = null;
-    //save edits to firebase
   }
 
   goToDetailPage(clickedProject: Project) {
-    this.router.navigate(['project', clickedProject.id]);
+    // this.router.navigate(['project', clickedProject.id]);
   }
   // projects = [];
   //

@@ -24,4 +24,16 @@ export class ProjectService {
     this.projects = angularFire.database.list('projects');
   }
 
+  getProjectById(projectId: string) {
+    return this.angularFire.database.object('/projects/' + projectId);
+  }
+
+  updateProject(localUpdatedProject){
+    var projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
+    projectEntryInFirebase.update({
+      header: localUpdatedProject.header,
+      description: localUpdatedProject.description
+    });
+  }
+
 }
