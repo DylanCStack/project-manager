@@ -4,5 +4,6 @@
   <h3 (click)="goToDetailPage(project)"><a href="#">{{project.header}}</a></h3>
   <p>{{project.description}}</p>
   <button (click)="editProject(project)">Edit Project</button>
+  <button (click)="deleteProject(project)">Delete</button>
 </div>
 <app-edit-projects [selectedProject]="selectedProject" (doneButtonClickedSender)="finishedEditing()"></app-edit-projects>

@@ -43,6 +43,11 @@ export class HomeComponent implements OnInit {
   finishedEditing() {
     this.selectedProject = null;
   }
+  deleteProject(project){
+    if(confirm("Are you sure you want to delete this project?")){
+      this.projectService.deleteProject(project);
+    }
+  }
 
   goToDetailPage(clickedProject: Project) {
     // this.router.navigate(['project', clickedProject.id]);
